@@ -12,6 +12,6 @@ node {
       openshiftVerifyDeployment depCfg: 'os-sample-python', replicaCount: 1, verifyReplicaCount: true
     }
     stage('System Test') {
-       sh "/opt/app-root/bin/python tests/test.py"
+       python tests/test.py
     }
 }
