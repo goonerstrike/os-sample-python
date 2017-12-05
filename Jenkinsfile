@@ -5,7 +5,7 @@ node('maven') {
   stage('Test') {
   }
   stage('Build Image') {
-    sh "oc start-build os-sample-ython"
+    sh "oc start-build os-sample-python"
   }
   stage('Deploy') {
     openshiftDeploy depCfg: 'os-sample-python'
