@@ -1,4 +1,4 @@
-node('maven') {
+node {
     stage('Build') {
       git url: "https://github.com/goonerstrike/os-sample-python.git"
     }
