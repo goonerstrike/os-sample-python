@@ -3,6 +3,7 @@ node {
       git url: "https://github.com/goonerstrike/os-sample-python.git"
     }
     stage('Test') {
+       python tests/test.py
     }
     stage('Build Image') {
       sh "oc start-build os-sample-python"
