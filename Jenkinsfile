@@ -1,5 +1,4 @@
-pipeline {
-  stages {
+node('') {
     stage('Build') {
       git url: "https://github.com/goonerstrike/os-sample-python.git"
     }
@@ -15,6 +14,5 @@ pipeline {
     stage('System Test') {
       echo "BLEH"
     }
-  }
 }
 
