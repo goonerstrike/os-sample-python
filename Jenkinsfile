@@ -5,11 +5,10 @@ node('maven') {
   stage('Test') {
   }
   stage('Build Image') {
-    unstash name:"jar"
     sh "oc start-build os-sample-ython"
   }
   stage('Deploy') {
-    openshiftDeploy depCfg: 'cart'
+    openshiftDeploy depCfg: 'os-sample-python'
     openshiftVerifyDeployment depCfg: 'os-sample-python', replicaCount: 1, verifyReplicaCount: true
   }
   stage('System Test') {
