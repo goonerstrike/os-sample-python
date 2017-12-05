@@ -13,6 +13,7 @@ node('maven') {
     openshiftVerifyDeployment depCfg: 'os-sample-python', replicaCount: 1, verifyReplicaCount: true
   }
   stage('System Test') {
-    sh "curl -s -X POST http://os-sample-python
+    echo "BLEH"
   }
 }
+
