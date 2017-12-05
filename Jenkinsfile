@@ -12,6 +12,6 @@ node {
       openshiftVerifyDeployment depCfg: 'os-sample-python', replicaCount: 1, verifyReplicaCount: true
     }
     stage('System Test') {
-       python "tests/test.py"
+       sh "curl -s http://localhost:8080 | grep 'Hello World'"
     }
 }
