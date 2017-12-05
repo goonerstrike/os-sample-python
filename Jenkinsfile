@@ -15,4 +15,3 @@ node {
        python tests/test.py
     }
 }
-
