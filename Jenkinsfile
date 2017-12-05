@@ -12,7 +12,7 @@ node('') {
       openshiftVerifyDeployment depCfg: 'os-sample-python', replicaCount: 1, verifyReplicaCount: true
     }
     stage('System Test') {
-      echo "BLEH"
+      sh "python tests/test.py"
     }
 }
 
