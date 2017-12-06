@@ -1,0 +1,40 @@
+# Please edit the object below. Lines beginning with a '#' will be ignored,
+# and an empty file will abort the edit. If an error occurs while saving this file will be
+# reopened with the relevant failures.
+#
+apiVersion: v1
+kind: BuildConfig
+metadata:
+  annotations:
+    pipeline.alpha.openshift.io/uses: '[{"name": "os-sample-python", "namespace":
+      "", "kind": "DeploymentConfig"}]'
+  creationTimestamp: 2017-12-05T15:38:01Z
+  name: python-pipeline
+  namespace: rchiera
+  resourceVersion: "238381"
+  selfLink: /oapi/v1/namespaces/rchiera/buildconfigs/python-pipeline
+  uid: 46f40e06-d9d2-11e7-95f9-005056a61f76
+spec:
+  nodeSelector: {}
+  output: {}
+  postCommit: {}
+  resources: {}
+  runPolicy: Serial
+  source:
+    git:
+      ref: master
+      uri: git@github.com:goonerstrike/os-sample-python.git
+    sourceSecret:
+      name: jenk
+    type: Git
+  strategy:
+    jenkinsPipelineStrategy:
+      jenkinsfilePath: Jenkinsfile
+    type: JenkinsPipeline
+  triggers:
+  - generic:
+      secret: FiArdDBH
+    type: Generic
+status:
+  lastVersion: 31
+
